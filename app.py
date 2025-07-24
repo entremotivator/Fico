@@ -1,19 +1,23 @@
 import streamlit as st
 
-st.set_page_config(page_title="MyFICO Embed", layout="wide")
+st.set_page_config(page_title="Visit MyFICO", layout="centered")
 
-st.title("MyFICO Website Viewer")
+st.title("🔐 Visit MyFICO Credit Site")
 
-# Embed the MyFICO site in an iframe (may not load due to X-Frame-Options)
-myfico_url = "https://www.myfico.com/"
-iframe_code = f"""
-    <iframe src="{myfico_url}"
-            width="100%"
-            height="800px"
-            style="border:none;">
-    </iframe>
-"""
+st.markdown("""
+Welcome! To view your official credit score and detailed credit report, click below to visit the official MyFICO website in a new tab.
+""")
 
-st.markdown(iframe_code, unsafe_allow_html=True)
+# Open MyFICO in new tab
+st.markdown(
+    """
+    <a href="https://www.myfico.com/" target="_blank">
+        <button style="padding: 0.75em 1.5em; font-size: 16px; background-color: #00468b; color: white; border: none; border-radius: 6px; cursor: pointer;">
+            Go to MyFICO Website
+        </button>
+    </a>
+    """,
+    unsafe_allow_html=True
+)
 
-st.warning("Note: If the website doesn't load, it's likely due to iframe restrictions (X-Frame-Options).")
+st.caption("This button opens the official MyFICO site in a new browser tab.")
